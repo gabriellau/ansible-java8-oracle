@@ -1,0 +1,14 @@
+- name: Debian jessie equals Ubuntu trusty
+  set_fact:
+    codename: "trusty"
+  when: ansible_distribution_release == "jessie"
+
+- name: Debian wheezy equals Ubuntu precise
+  set_fact:
+    codename: "precise"
+  when: ansible_distribution_release == "wheezy"
+
+- name: Debian stretch equals Ubuntu xenial
+  set_fact:
+    codename: "xenial"
+  when: ansible_distribution_release == "stretch"
