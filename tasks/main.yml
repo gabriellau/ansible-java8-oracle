@@ -12,7 +12,7 @@
   become: yes
   apt_repository: 
     repo: ppa:webupd8team/java 
-    codename: {{ codename }}
+    codename: "{{ codename }}"
 
 - name: Accept Java 8 License
   become: yes
@@ -25,7 +25,7 @@
 - name: Install Oracle Java 8
   become: yes
   apt: 
-    name: {{item}} 
+    name: "{{ item }}"
     state: latest
   with_items:
     - oracle-java8-installer
